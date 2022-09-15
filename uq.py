@@ -131,6 +131,7 @@ def evaluate_models(args, mixture_components, in_test_loader, ids, no_loss_acc, 
             likelihood=args.likelihood, sigma_noise=args.sigma_noise))
         some_metrics, all_y_prob, all_y_var = test_output
         some_metrics['test_time'] = test_time
+        some_metrics['id_rotation'] = id
 
         if i == 0:
             all_y_prob_in = all_y_prob.clone()
